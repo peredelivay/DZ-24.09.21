@@ -1,0 +1,21 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main() { // ЗАДАНИЕ УРАВНЕНИЕ 
+	setlocale(0, "Russian");
+	double b;
+	double c;
+	cout << "Решить уравнение вида bx + c = 0 \n" << endl;
+	cout << "Ввести значение переменной b: " << endl;
+	cin >> b;
+	if (b == 0) {
+		cout << "Бесконечное количество решений" << endl;
+	}
+	else {
+		cout << "Ввести значение переменной c: " << endl;
+		cin >> c;
+		cout << "x = " << -c / b << endl;
+	}
+}
