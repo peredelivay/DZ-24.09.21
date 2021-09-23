@@ -1,0 +1,8 @@
+#include <iostream>
+
+using namespace std;
+
+int main() { //ЗАДАНИЕ ИМЯ
+	setlocale(0, "russian");
+	cout << "Иван" <<endl;
+}
