@@ -1,0 +1,70 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+void main() {
+	setlocale(0, "Russian");
+	double a;
+	double b;
+	double c;
+	while (true){
+		cout << "Решить уравнение вида ax^2 + bx + c = 0\n" << endl;
+		cout << "Введите значение переменной a: \n" << endl;
+		cin >> a;
+		if (a == 0) {
+			cout << "Решить уравнение вида bx + c = 0 \n" << endl;
+			cout << "Ввести значение переменной b: " << endl;
+			cin >> b;
+			if (b == 0) {
+				cout << "Бесконечное количество решений" << endl;
+			}
+			else {
+				cout << "Ввести значение переменной c: " << endl;
+				cin >> c;
+				cout << "x = " << -c / b << endl;
+			}
+		}
+		else {
+			cout << "Введите значение переменной b: " << endl;
+			cin >> b;
+			if (b == 0) {
+				cout << "Решить уравнение вида ax^2 + c = 0\n" << endl;
+				cout << "Введите значение переменной c: " << endl;
+				if (c < 0) {
+					cout << "x1 = " << sqrt(-c / a) << endl;
+					cout << "x2 = " << -sqrt(-c / a) << endl;
+				}
+				if (c > 0) {
+					cout << "x = " << -sqrt(-c / a) << endl;
+				}
+				if (c == 0) {
+					cout << "Нет корней" << endl;
+				}
+			}
+			else {
+				cout << "Введите значение переменной c: " << endl;
+				cin >> c;
+				if (c == 0) {
+					cout << "Решить уравнение вида ax^2 + bx = 0\n" << endl;
+					cout << "x1 = 0" << endl;
+					cout << "x2 = " << -b / a << endl;
+				}
+				else {
+					double d = (b * b + (-4) * a * c);
+					if (d > 0) {
+						cout << "x1 = " << (-b - sqrt(d)) / 2 * a << endl;
+						cout << "x2 = " << (-b + sqrt(d)) / 2 * a << endl;
+					}
+					else if (d == 0) {
+						cout << "x = " << -b / 2 * a << endl;
+					}
+					else {
+						cout << "Нет корней" << endl;
+					}
+
+				}
+			}
+		}
+	}
+}
