@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+void main() {//ЗАДАНИЕ АРИФМЕТИКА
+	setlocale(0, "Russian");
+	double b;
+	double c;
+	cout << "Введите значение переменной b: \n " << endl;
+	cin >> b;
+	cout << "Введите значение переменной c: \n" << endl;
+	cin >> c;
+	cout << "Сумма: " << b + c << endl;
+	cout << "Разность: " << b - c << endl;
+	cout << "Произведение: " << b * c << endl;
+	if (c == 0) {
+		cout << "На 0 делить нельзя..." << endl;
+	}
+	else {
+		cout << "Частное: " << -c / b << endl;
+	}
+}
