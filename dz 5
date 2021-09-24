@@ -1,22 +1,39 @@
 #include <iostream>
 #include <string>
+#include <Windows.h>
 
 using namespace std;
 
 int main() {
-	setlocale(0, "Russian");
-	bool day;
-	bool shtori;
-	bool lamp;
-	cout << "На улице светло?" << endl;
-	cin >> day;
-	cout << "Шторы раздвинуты?" << endl;
-	cin >> shtori;
-	cout << "Лампа включена?" << endl;
-	cin >> lamp;
-	if (day && shtori || lamp == true) {
-		cout << "В комнате светло";
-	}
-	if (day || shtori || lamp == false) {
-		cout << "В комнате темно" << endl;
-	}
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    while (true) {
+        string day;
+        string shtori;
+        string lamp;
+        string otvet[] = { "Да", "Нет" };
+
+        cout << "Лампа вклчена? Да \ Нет" << endl;
+        cin >> lamp;
+        if (lamp == otvet[0]) {             //ДОДЕЛАТЬ ПРОВЕРКУ 
+            cout << "В комнате светло" << endl;
+        }
+        else {
+            cout << "На улице светло? Да \ Нет" << endl;
+            cin >> day;
+            if (day == otvet[0]) {
+                cout << "Шторы раздвинуты? Да \ Нет" << endl;
+                cin >> shtori;
+                if (shtori == otvet[0]) {
+                    cout << "В комнате светло" << endl;
+                }
+                else {
+                    cout << "В комнате темно;" << endl;
+                }
+            }
+            else {
+                cout << "В комнате темно" << endl;
+            }          
+        }
+    }
+}
